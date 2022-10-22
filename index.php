@@ -1,5 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+
+session_start(); //Salvar os dados do formulário e permanecer na mesma página
+$dbname = "projeto1programacaoweb"; //Nome do banco de dados criado
+$dbhost = "127.0.0.1"; //Porta onde o banco de dados é executado
+$dbuser = "root"; //Nome do usuário
+$dbpass = "Naruto9caldas*"; //Senha do usuário
+
+$pdo = new PDO("mysql:dbname=" . $dbname . ";host:" . $dbhost . "", "" . $dbuser . "", $dbpass); //Comando para criar uma nova requisição para o BD
+
+$email = $_REQUEST["email"]; //Recebendo o email do formulário
+
+unset($_POST["btn"]);  //Utilizado para não contar o botão como informação enviada para o teste
+
+// TESTE REALIZADO PARA VERIFICAR SE O CAMPO DE EMAIL ESTÁ VAZIO OU NAO, SE ESTIVER NADA ACONTECE, SE CONTER UM EMAIL DIGITADO SERÁ CADASTRADO UM NOVO EMAIL
+if(!empty(array_filter($_POST))) {
+    $pdo->query("INSERT INTO `contato` (email) VALUES ('$email')");
+}
+
+
+
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -120,7 +142,7 @@
         <p>Quais são as métricas utilizados?</p>
     </ol>
 
-    <form id="newsletter" style="width: 50%;margin: auto; text-align:center; margin-bottom: 30px;">
+    <form action="index.php" method="post" id="newsletter" style="width: 50%;margin: auto; text-align:center; margin-bottom: 30px;">
         <div class="form-group">
             <label for="exampleInputEmail1">Faça parte da nossa newsletter!</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu email aqui" name="email">
