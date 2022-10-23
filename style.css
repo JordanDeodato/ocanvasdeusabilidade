@@ -26,6 +26,7 @@ header {
 .logo {
     width: 60px;
     box-shadow: -2px 2px 2px black;
+    margin-bottom: 10px;
 }
 
 .img-logo {
@@ -59,9 +60,8 @@ header {
 }
 
 .banner-info {
-    width: 30%;
-    max-height: 400px;
-    font-size: 3vh;
+    width: 30vh;
+    font-size: 2.5vh;
     text-align: justify;
     background-color: #56addf;
     margin-left: 10px;
@@ -70,7 +70,7 @@ header {
 }
 
 .text-banner {
-    width: 50%;
+    width: 60vh;
     margin: auto;
     margin-top: 20px;
     padding: 30px;
@@ -87,7 +87,7 @@ header {
 
 .text-banner p {
     margin-top: 20px;
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 
 .btn-download {
@@ -114,10 +114,12 @@ header {
 }
 
 .casos-banner {
-    width: 30%;
+    width: 40vh;
     height: 300px;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-radius: 5px;
     cursor: pointer;
 }
