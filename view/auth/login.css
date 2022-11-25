@@ -1,0 +1,12 @@
+.wrapper {
+    width: 30%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: rgba(138, 127, 255, 0.642);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.form-group {
+    margin: 10px;
+}
